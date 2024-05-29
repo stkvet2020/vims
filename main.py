@@ -36,8 +36,11 @@ def main():
 
     medicalrecord_1.add_pet(pet1)
 
+    medicalrecord_1.add_owner(owner1)
+
     """Display Medical Record"""
     medicalrecord_1.display_pet()
+    medicalrecord_1.display_owner()
 
 
 
