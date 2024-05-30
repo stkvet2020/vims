@@ -12,8 +12,8 @@ class Pet:
 
 class Owner:
     def __init__(self, f_name, l_name, street_address, city, state, postal_code, country, tel_nbr, email):
-        self.owner_info = {'first name': f_name, 'last name': l_name, 'street_address': street_address,
-                           'city': city, 'state': state, 'postal code': postal_code, 'country': country,
+        self.owner_info = {'first_name': f_name, 'last_name': l_name, 'street_address': street_address,
+                           'city': city, 'state': state, 'postal_code': postal_code, 'country': country,
                            'telephone': tel_nbr, 'email': email}
 
 
@@ -25,7 +25,7 @@ class MedicalRecord:
 
     def add_pet(self, pet):
         """Need to convert to a list for adding more than one pet"""
-        self.pets.append(pet)
+        self.pets.append(pet.pet_info)
         #self.records[pet] = pet.pet_info
         self.records[pet] = self.pets
         print(f"This is the records[pet] dictionary: {self.records[pet]}")
@@ -34,10 +34,16 @@ class MedicalRecord:
         self.records[owner] = owner.owner_info
         print(f"This is the records[owner] dictionary: {self.records[owner]}")
 
-    def display_pet(self):
+    def display_pet(self,pet):
         for record in self.records:
-            print(f"This comes from the display_pet method :  {record.pet_info}")
+            print(f"This comes from the display_pet method :  {self.records[pet]}")
 
-    def display_owner(self):
+    def display_owner(self,owner):
         for record in self.records:
-            print(f"This comes from the display_pet method :  {record.owner_info}")
+            print(f"This comes from the display_owner method :  {self.records[owner]}")
+
+    def display_record(self,pet,owner):
+        print(f"THis is the self object : {self}")
+        print(f"This is the self.records object : {self.records}")
+        print(f"This is the self.records.pet object : {self.records[pet][0]['name']}")
+        print(f"THis is the self.records.owner object : {self.records[owner]['first_name']}")

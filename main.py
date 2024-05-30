@@ -38,9 +38,12 @@ def main():
 
     medicalrecord_1.add_owner(owner1)
 
-    """Display Medical Record"""
-    medicalrecord_1.display_pet()
-    medicalrecord_1.display_owner()
+    """Display Medical Record Individual Parts"""
+    medicalrecord_1.display_pet(pet1)
+    medicalrecord_1.display_owner(owner1)
+
+    """Display Medical Record Object"""
+    medicalrecord_1.display_record(pet1,owner1)
 
 
 
